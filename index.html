@@ -15,7 +15,7 @@
 
   <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" crossorigin src="/glimmr-pilot/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/glimmr-pilot/assets/styles-B3qZpIVS.css">
+    <link rel="stylesheet" crossorigin href="/glimmr-pilot/assets/styles-BeoXk6rH.css">
   </head>
   <body>
     <header class="header">
@@ -206,6 +206,127 @@
                         несколько кликов.</p>
                     <img src="img/placeholder.png" alt="Scaling" class="innovation-img">
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blog" id="blog">
+    <div class="container">
+        <div class="blog-top reveal-up">
+            <h2 class="section-title">Образовательная часть <br><span>и AI-практики</span></h2>
+            <div class="blog-filter">
+                <span class="filter-item active">Все темы</span>
+                <span class="filter-item">Разработка</span>
+                <span class="filter-item">Стратегия</span>
+                <span class="filter-item">Кейсы</span>
+            </div>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card reveal-up">
+                <div class="blog-img-wrapper">
+                    <img src="img/placeholder.png" alt="AI development" class="blog-img">
+                    <div class="blog-date">15/01/2026</div>
+                </div>
+                <div class="blog-info">
+                    <span class="blog-tag">Разработка</span>
+                    <h3>Как создать первого AI-бота за 2 минуты</h3>
+                    <p>Пошаговый путь, понятный каждому: от настройки окружения до первого диалога с ассистентом.</p>
+                    <a href="#" class="blog-more">Узнать детали <i data-lucide="arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card reveal-up" style="transition-delay: 0.1s;">
+                <div class="blog-img-wrapper">
+                    <img src="img/placeholder.png" alt="AI strategy" class="blog-img">
+                    <div class="blog-date">12/01/2026</div>
+                </div>
+                <div class="blog-info">
+                    <span class="blog-tag">Выгода</span>
+                    <h3>Технология для пассивного дохода на базе AI</h3>
+                    <p>Оцениваем перспективы проекта и внедряем практики, применимые уже сегодня для роста вашего
+                        бизнеса.</p>
+                    <a href="#" class="blog-more">Узнать детали <i data-lucide="arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="blog-img-wrapper">
+                    <img src="img/placeholder.png" alt="AI Future" class="blog-img">
+                    <div class="blog-date">08/01/2026</div>
+                </div>
+                <div class="blog-info">
+                    <span class="blog-tag">Инновации</span>
+                    <h3>Будущее AI-ассистентов в странах ЕС</h3>
+                    <p>Решения, которые меняют правила игры на европейском рынке цифровой инфраструктуры.</p>
+                    <a href="#" class="blog-more">Узнать детали <i data-lucide="arrow-up-right"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <div class="blog-cta reveal-up">
+            <p>Хотите получить больше информации?</p>
+            <a href="#contact" class="btn btn-secondary">Подписаться на рассылку</a>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info reveal-up">
+                <div class="hero-label">Свяжитесь с нами</div>
+                <h2 class="section-title">Готовы расширить <br><span>горизонты проекта?</span></h2>
+                <p class="about-lead">Бесплатная консультация по всем вопросам внедрения AI. Получите экспертную
+                    поддержку на всех этапах разработки.</p>
+
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <span>Локация</span>
+                        <p>15 Rue de la Paix, 75002 Paris, France</p>
+                    </div>
+                    <div class="detail-item">
+                        <span>Email</span>
+                        <p>hello@glimmr-pilot.blog</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper reveal-up">
+                <form id="ai-form" class="form">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" placeholder="Александр" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email адрес</label>
+                            <input type="email" id="email" name="email" placeholder="mail@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" placeholder="33123456789" required>
+                            <small>Только цифры, без символов</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="captcha-label" for="captcha">Сколько будет: 5 + 3 = ?</label>
+                        <input type="text" id="captcha" name="captcha" placeholder="Ответ" required>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="agreement" required>
+                        <label for="agreement">Я согласен с <a href="personal-data-policy.html">политикой обработки
+                                данных</a></label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Отправить запрос</span>
+                    </button>
+
+                    <div id="form-status" class="form-status"></div>
+                </form>
             </div>
         </div>
     </div>
