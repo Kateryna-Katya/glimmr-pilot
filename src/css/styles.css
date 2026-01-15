@@ -518,3 +518,92 @@ ul {
         order: -1;
     }
 }
+/* FEATURES SECTION */
+.features {
+    padding: 140px 0;
+    position: relative;
+}
+
+.features-header {
+    margin-bottom: 80px;
+    max-width: 700px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    opacity: 0.6;
+    margin-top: 24px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    /* Создаем эффект тонких линий между карточками */
+    background-color: var(--border-color);
+    /* Цвет линий */
+    border: 0.5px solid var(--border-color);
+}
+
+.feature-card {
+    background-color: var(--bg-color);
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: background-color 0.3s ease;
+    cursor: default;
+}
+
+.feature-card:hover {
+    background-color: #ffffff;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    border: 0.5px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.feature-card:hover .card-icon {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: rotate(15deg);
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.feature-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.7;
+    flex-grow: 1;
+}
+
+.card-footer {
+    margin-top: 20px;
+}
+
+.tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 8px;
+    border: 0.5px solid var(--border-color);
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        padding: 32px;
+    }
+}

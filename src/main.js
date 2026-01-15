@@ -88,5 +88,26 @@ const visualObserver = new IntersectionObserver((entries) => {
     }
 }, { threshold: 0.5 });
 
-if (visualBody) visualObserver.observe(visualBody);
+    if (visualBody) visualObserver.observe(visualBody);
+    // Добавляем логику взаимодействия с карточками
+const cards = document.querySelectorAll('.feature-card');
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        cards.forEach(c => {
+            if (c !== card) c.style.opacity = '0.4';
+        });
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        cards.forEach(c => {
+            c.style.opacity = '1';
+        });
+    });
+});
+
+// Переинициализация иконок для новых элементов
+if (window.lucide) {
+    lucide.createIcons();
+}
 });
