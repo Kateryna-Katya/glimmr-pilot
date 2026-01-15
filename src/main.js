@@ -109,5 +109,38 @@ cards.forEach(card => {
 // Переинициализация иконок для новых элементов
 if (window.lucide) {
     lucide.createIcons();
-}
+    }
+    window.addEventListener('scroll', () => {
+    const innovationsSection = document.querySelector('.innovations');
+    const progressBar = document.querySelector('.progress-bar');
+    
+    if (innovationsSection && progressBar) {
+        const sectionRect = innovationsSection.getBoundingClientRect();
+        const sectionHeight = innovationsSection.offsetHeight;
+        
+        // Вычисляем процент прокрутки внутри секции
+        let progress = (Math.abs(sectionRect.top) / (sectionHeight - window.innerHeight)) * 100;
+        
+        if (sectionRect.top > 0) progress = 0;
+        if (progress > 100) progress = 100;
+        
+        progressBar.style.width = `${progress}%`;
+    }
+});
+
+// Наблюдатель для подсветки активных элементов в правой части
+const itemObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+        } else {
+            entry.target.style.opacity = "0.3";
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.innovation-item').forEach(item => {
+    item.style.transition = "opacity 0.5s ease";
+    itemObserver.observe(item);
+});
 });
