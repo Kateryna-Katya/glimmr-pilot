@@ -1092,3 +1092,115 @@ ul {
     list-style: disc;
     opacity: 0.8;
 }
+/* STYLES ДЛЯ ЮРИДИЧЕСКИХ СТРАНИЦ */
+.pages {
+  padding: 160px 0 100px;
+  background-color: var(--bg-color);
+}
+
+.page-header {
+  margin-bottom: 60px;
+  border-bottom: 0.5px solid var(--border-color);
+  padding-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.1;
+  margin-top: 20px;
+}
+
+.page-content {
+  max-width: 800px;
+}
+
+.page-content h2 {
+  font-size: 24px;
+  margin: 48px 0 24px;
+  text-transform: none;
+  color: var(--text-color);
+}
+
+.page-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.policy-list {
+  margin-bottom: 32px;
+}
+
+.policy-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.policy-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-color);
+}
+
+.contact-link {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-link:hover {
+  border-bottom-color: var(--accent-color);
+}
+
+.page-contact-block {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 0.5px solid var(--border-color);
+}
+/* СПЕЦИФИЧЕСКИЕ СТИЛИ ДЛЯ ДИСКЛЕЙМЕРА */
+.disclaimer-box {
+  background-color: #ffffff;
+  border: 1px solid var(--accent-color);
+  padding: 32px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.disclaimer-box::before {
+  content: '!';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: var(--accent-color);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+}
+
+.confirmation-banner {
+  margin-top: 48px;
+  padding: 24px;
+  background: rgba(0, 85, 255, 0.03);
+  border-left: 3px solid var(--accent-color);
+}
+
+.confirmation-banner p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
