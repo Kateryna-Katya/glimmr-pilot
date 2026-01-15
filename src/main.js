@@ -39,4 +39,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+    // Добавляем к существующему коду
+
+// Нативный Intersection Observer для анимации при скролле
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal-up, .reveal-right').forEach(el => observer.observe(el));
+
+// Эффект печатной машинки для блока кода
+const codeText = `const assistant = new GlimmrAI({
+  mode: 'autonomous',
+  learning: true,
+  target: 'business_growth'
+});
+
+assistant.start();`;
+
+function typeWriter(text, element, speed = 50) {
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+// Запускаем печать, когда секция видна
+const visualBody = document.querySelector('.visual-card');
+const typewriterEl = document.getElementById('typewriter');
+
+const visualObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+        typeWriter(codeText, typewriterEl);
+        visualObserver.disconnect(); // Запускаем один раз
+    }
+}, { threshold: 0.5 });
+
+if (visualBody) visualObserver.observe(visualBody);
 });
