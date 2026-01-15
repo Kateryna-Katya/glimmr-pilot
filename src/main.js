@@ -25,4 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // В дополнение к предыдущему коду
+document.addEventListener('DOMContentLoaded', () => {
+    // Можно добавить эффект параллакса для сетки на чистом JS
+    const decor = document.querySelector('.hero-bg-decor');
+    
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        if (decor) {
+            decor.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+        }
+    });
+});
 });
