@@ -143,4 +143,68 @@ document.querySelectorAll('.innovation-item').forEach(item => {
     item.style.transition = "opacity 0.5s ease";
     itemObserver.observe(item);
 });
+    // Логика фильтров блога
+const filterItems = document.querySelectorAll('.filter-item');
+
+filterItems.forEach(item => {
+    item.addEventListener('click', () => {
+        filterItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        
+        // Здесь можно добавить логику фильтрации карточек
+        console.log(`Фильтр: ${item.textContent}`);
+    });
+});
+    document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('ai-form');
+    const phoneInput = document.getElementById('phone');
+    const statusDiv = document.getElementById('form-status');
+    const captchaLabel = document.getElementById('captcha-label');
+    
+    // Генерация капчи
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    const captchaResult = num1 + num2;
+    captchaLabel.innerText = `Сколько будет: ${num1} + ${num2} = ?`;
+
+    // Валидация телефона (только цифры)
+    phoneInput.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    });
+
+    // Обработка отправки
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const userCaptcha = document.getElementById('captcha').value;
+        
+        // Сброс статуса
+        statusDiv.style.display = 'none';
+        statusDiv.className = 'form-status';
+
+        // Проверка капчи
+        if (parseInt(userCaptcha) !== captchaResult) {
+            statusDiv.innerText = 'Ошибка: Неверный ответ капчи.';
+            statusDiv.classList.add('error');
+            return;
+        }
+
+        // Имитация AJAX
+        const submitBtn = form.querySelector('.btn-submit');
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Отправка...';
+
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Отправить запрос';
+            
+            statusDiv.innerText = 'Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.';
+            statusDiv.classList.add('success');
+            
+            form.reset();
+            // Обновляем капчу для следующего раза
+            location.reload; // Или просто обновить переменные
+        }, 1500);
+    });
+});
 });
